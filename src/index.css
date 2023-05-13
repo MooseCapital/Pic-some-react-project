@@ -11,7 +11,7 @@
 }
 @font-face {
     font-family: "Rubik";
-    src: url("/Rubik-VariableFont_wght.ttf") format("woff2");
+    src: url("/public/Rubik-VariableFont_wght.ttf") format("woff2");
 }
 /*remember we set height, but if we set width, it does not take into account the scrollbar 10px, this creates horizontal scroller on the bottom
     the solution is to not set width anywhere and it defaults, or set auto only, but we should set height. if we do set width, choose 100% over 100vw
@@ -59,8 +59,34 @@ cursor: pointer;
 }
 #root {
 }
-.container {
+#container {
 display: flex;
 flex-direction: column;
 background-color: #2e3440;
 }
+
+header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #434c5e;
+height: 70px;
+padding: 20px;
+}
+header a {
+}
+a {
+text-decoration: none;
+}
+
+#cart-logo:hover {
+box-shadow:
+            0.3px 0.5px 1.4px -1px rgba(0, 0, 0, 0.515),
+            2px 4px 11px -1px rgba(0, 0, 0, 0.63)
+;
+}
+
+
+
+
+
