@@ -1,18 +1,25 @@
-import { useState } from 'react'
+import {useContext, useEffect, useState} from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import {Link, Route, Routes} from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Photos from "./pages/Photos.jsx"
 import Cart from "./pages/Cart.jsx";
+import {AppContext} from "./components/AppContextProvider.jsx";
 //image import
 //const viteLogo = new URL('/vite.svg', import.meta.url).href
 
-function App() {
+
+function App(props) {
+
+ const app = useContext(AppContext)
+
 
 
   return (
-        <div id={"container"}>
+
+      <div id={"container"}>
+
             <Header/>
 
 
@@ -25,5 +32,6 @@ function App() {
         </div>
   )
 }
+
 
 export default App

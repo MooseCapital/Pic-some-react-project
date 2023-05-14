@@ -38,7 +38,7 @@ padding: 0;
 body {
     margin: 0 auto;
     padding: 0;
-    background-color: #2e3440;
+    background-color: aliceblue;
 
 }
 
@@ -62,7 +62,7 @@ cursor: pointer;
 #container {
 display: flex;
 flex-direction: column;
-background-color: #2e3440;
+background-color: aliceblue;
 }
 
 header {
@@ -86,7 +86,38 @@ box-shadow:
 ;
 }
 
+.photos-page {
+  height: 100%;
+  margin: 0;
+padding: 0;
+}
+
+.cart-page {
+
+}
 
 
 
+.loader-gif {
+position: absolute;
+left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+z-index: 102;
+}
 
+.d-none {
+display: none;
+
+}
+
+.loading-page {
+background-color: white;
+position: absolute;
+  height: 100%;
+  margin: 0;
+padding: 0;
+z-index: 999;
+}
