@@ -5,6 +5,7 @@ function AppContextProvider(props) {
     const [photos, setPhotos] = useState([])
     const [loader, setLoader] = useState(true)
 
+
     useEffect(() => {
             let subscribed = true;
             async function getData() {
@@ -16,6 +17,7 @@ function AppContextProvider(props) {
                         return data
                     })
                     setLoader(false)
+                    addFavorites();
                  }
              }
             getData()
@@ -26,8 +28,27 @@ function AppContextProvider(props) {
             }
     }, [])
 
+    function addFavorites() {
+        setPhotos(prev => {
+            return prev.map(img => {
+                return {
+                    ...img,
+                    favorite: false
+                }
+            })
+        })
+    }
+
+   function toggleFavorite(id) {
+        setPhotos(prevPhotos => {
+            return prevPhotos.map(img => {
+                return id === img.id ? {...img, favorite: !img.favorite} : {...img}
+            })
+        })
+    }
+
     return (
-        <AppContext.Provider value={{ photos, setPhotos, loader, setLoader}}>
+        <AppContext.Provider value={{ photos, setPhotos, loader, setLoader, toggleFavorite}}>
             {props.children}
         </AppContext.Provider>
     )

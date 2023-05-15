@@ -7,28 +7,24 @@ import {getClass} from "../data/Utils.js";
 const loader = new URL('/public/loading.gif', import.meta.url).href
 
 function Photos(props) {
-
-
-
-
     const app = useContext(AppContext)
 
 
-    const photoElements = app.photos.map((item, index) => {
 
+    const photoElements = app.photos.map((item, index) => {
         return (
-            <Image key={item.id} img={item} url={item.download_url} class={getClass(index)}/>
+            <Image toggleFavorite={() => app.toggleFavorite(item.id)} key={item.id} img={item}  class={getClass(index)}/>
         )
     })
 
     console.log(app.photos)
     return (
-        <div className="photos-page">
+        <main className="photos">
 
 
-            {/* {photoElements} */}
+            {photoElements}
             {app.loader && <img className={"loader-gif"} src={loader} alt=""/>}
-        </div>
+        </main>
     )
 }
 
