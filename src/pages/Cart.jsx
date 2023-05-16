@@ -1,10 +1,13 @@
+import {useContext, useEffect, useState, useRef} from 'react'
+
 function Cart(props) {
 
 
+
     return (
-        <div className="cart-page">
-            <h3>cart</h3>
-        </div>
+        <>
+
+        </>
     )
 }
 
