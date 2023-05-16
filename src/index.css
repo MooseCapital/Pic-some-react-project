@@ -141,6 +141,8 @@ main.photos {
     grid-auto-flow: dense;
 }
 
+
+
 .wide {
     grid-column: span 2;
 }
@@ -182,7 +184,26 @@ main.photos {
 }
 
 
+main.cart-page {
+    padding: 10px;
+}
+.cart-page div, .cart-page p, .cart-page h1, .cart-page h2, .cart-page h3, .cart-page h4, .cart-page h5, .cart-page h6 {
+color: #2e3440;
+}
 
+.cart-page > h1 {
+    text-align: center;
+}
+
+.cart-page .total-cost {
+    text-align: right;
+    font-size: 1.3em;
+}
+
+.cart-page div.order-button {
+    display: flex;
+    justify-content: center;
+}
 
 
 

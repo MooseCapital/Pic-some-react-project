@@ -33,7 +33,7 @@ function Photos(props) {
 
 
             {photoElements}
-            {app.loader && <img className={"loader-gif"} src={loader} alt=""/>}
+            {app.loader && <img className={"loader-gif"}  src={loader} alt=""/>}
         </main>
     )
 }

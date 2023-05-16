@@ -13,7 +13,7 @@ function Image(props) {
 
 
     return (
-        <div className={`${props.class} image-container`}>
+        <div className={`${props.class} image-container`} onMouseLeave={() => setHovered(false)}>
             <img
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
