@@ -205,6 +205,17 @@ color: #2e3440;
     justify-content: center;
 }
 
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.product-image-cart {
+    margin-right: auto;
+    margin-left: 10px;
+}
 
 
 

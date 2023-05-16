@@ -37,7 +37,8 @@ function AppContextProvider(props) {
                 return {
                     ...img,
                     favorite: false,
-                    carted: false
+                    carted: false,
+                    price: 5.99,
                 }
             })
         })
