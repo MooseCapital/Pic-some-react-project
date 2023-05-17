@@ -86,7 +86,7 @@ function AppContextProvider(props) {
     console.log(cartItems)
 
     return (
-        <AppContext.Provider value={{ photos, setPhotos, loader, setLoader, toggleFavorite, cartItems, addCartItems, toggleCarted, removeCartItems}}>
+        <AppContext.Provider value={{ photos, setPhotos, loader, setLoader, toggleFavorite, cartItems, setCartItems , addCartItems, toggleCarted, removeCartItems}}>
             {props.children}
         </AppContext.Provider>
     )

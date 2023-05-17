@@ -1,6 +1,7 @@
-import {useContext, useState} from "react";
+import {useContext, useRef, useState} from "react";
 import PropTypes from "prop-types";
 import {AppContext} from "./AppContextProvider.jsx";
+import useHover from "../hooks/useHover.js";
 
 const heartImg = new URL('/public/heart-fill.svg', import.meta.url).href
 const heartLineImg = new URL('/public/heart-line.svg', import.meta.url).href
