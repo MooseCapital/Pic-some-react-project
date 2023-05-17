@@ -33,11 +33,15 @@ Instead of switching to HashRouter, we can keep our BrowserRouter
 
 Go to package.json
 
-`"homepage": "/github-repo-name/#",`
+```
+"homepage": "/github-repo-name/#",
+```
 
 Go to main.jsx or where react is rendered, and add basename
 
-`<BrowserRouter basename={'/github-repo-name'}>`
+```
+<BrowserRouter basename={'/github-repo-name'}>
+```
 
 ## Lessons Learned
 
