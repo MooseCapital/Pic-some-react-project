@@ -7,7 +7,7 @@ import {AppContextProvider} from "./components/AppContextProvider.jsx";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AppContextProvider>
-        <Router>
+        <Router basename={'/Pic-some-react-project'}>
         <App />
         </Router>
     </AppContextProvider>
