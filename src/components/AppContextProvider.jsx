@@ -36,7 +36,7 @@ function AppContextProvider(props) {
                   }
                   if (subscribed && !JSON.parse(localStorage.getItem("photos")).length ) {
                     setPhotos(prevState => {
-                        data.length = 10;
+                        data.length = 20;
                         return data
                     })
 
