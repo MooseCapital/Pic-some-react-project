@@ -68,11 +68,13 @@ We check if the cart id matches any id in photos when the Image Component is cre
 ```
 const photoElements = app.photos.map((item, index) => {
     return (
-        <Image toggleFavorite={() => app.toggleFavorite(item.id)}  key={item.id} img={item}  class={getClass(index)}
-            isInCart={app.cartItems.some(cartImage => {
-                return cartImage.id === item.id
-            })}
-            }
+        <Image toggleFavorite={() => app.toggleFavorite(item.id)}  key={item.id} 
+        img={item} class={getClass(index)}
+            
+        isInCart={app.cartItems.some(cartImage => {
+            return cartImage.id === item.id
+        })}
+        }
         />
     )
 })
