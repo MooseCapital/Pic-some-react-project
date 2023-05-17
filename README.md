@@ -1,13 +1,15 @@
 
 # Pic Some Photos
+![React](public/react.svg) ![Vite](public/vitejs.svg)
 
 This project is the last section in Scrimbas [Advanced React course by Bob Ziroll](https://scrimba.com/learn/react)
 
-We can favorite an image or add it to the cart. Then go to the cart page, delete any items or get our total and checkout. This will empty the cart. If we ever exit the page our cart items and favorite images are saved.
+## Features
 
-
-
-
+- Favorite images or add them to cart
+- localStorage saves your images after the browser closes
+- remove items from the gallery or cart page
+- checking out clears the cart
 
 ## Fun
 Bob said we should try our own add-ons to the project, such as localStorage. At first it seems hard to implement, but it is very easy. And exciting, because we have not yet learned a server side language or database. Our previous projects have looked sad because our data erases every time we refresh, now localStorage fixes that.
