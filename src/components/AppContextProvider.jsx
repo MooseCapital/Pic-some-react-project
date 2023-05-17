@@ -2,24 +2,44 @@ import {useState, createContext, useEffect} from "react";
 
 const AppContext = createContext({})
 function AppContextProvider(props) {
-    const [photos, setPhotos] = useState([])
+    const [photos, setPhotos] = useState(JSON.parse(localStorage.getItem("photos")) || [])
     const [loader, setLoader] = useState(true)
-    const [cartItems, setCartItems] = useState([])
+    const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem("cart")) || [])
 
-//we can get favorite photos from local storage by default photos state grabbing from storage, now below in fetch,
-    //we could say if(subscribed && !localStorage.prop) -> so if the localstorage is empty, as in the first time visiting, we fetch!
-    //if it's not empty, then they already fetched, and possibly have favorite items, no need to setPhotos from the current data
+
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cartItems))
+
+        return () => {
+
+        }
+    },[cartItems])
+
+    useEffect(() => {
+        localStorage.setItem("photos", JSON.stringify(photos))
+
+
+        return () => {
+
+        }
+    },[photos])
+
+
     useEffect(() => {
             let subscribed = true;
             async function getData() {
                   let res = await fetch("https://picsum.photos/v2/list?page=4&limit=100");
                   let data = await res.json();
                   if (subscribed) {
+                      setLoader(false)
+                  }
+                  if (subscribed && !JSON.parse(localStorage.getItem("photos")).length ) {
                     setPhotos(prevState => {
                         data.length = 10;
                         return data
                     })
-                    setLoader(false)
+
                     addFavorites();
                  }
              }
@@ -65,6 +85,20 @@ function AppContextProvider(props) {
         })
     }
 
+    function setCartFalse(id) {
+        setPhotos(prevPhotos => {
+            return prevPhotos.map(img => {
+
+                return id === img.id ? {...img, carted: false} : {...img}
+            })
+        })
+        setCartItems(prevCart => {
+            return prevCart.map(img => {
+                return img.id === id ? {...img, carted: false} : {...img}
+            })
+        })
+    }
+
     function removeCartItems(id) {
         setCartItems(prev => {
             return prev.filter(img => {
@@ -83,10 +117,10 @@ function AppContextProvider(props) {
             return prev;
         })
     }
-    console.log(cartItems)
+    console.log([...cartItems])
 
     return (
-        <AppContext.Provider value={{ photos, setPhotos, loader, setLoader, toggleFavorite, cartItems, setCartItems , addCartItems, toggleCarted, removeCartItems}}>
+        <AppContext.Provider value={{ photos, setPhotos, loader, setLoader, toggleFavorite, cartItems, setCartItems , addCartItems, toggleCarted, removeCartItems, setCartFalse}}>
             {props.children}
         </AppContext.Provider>
     )

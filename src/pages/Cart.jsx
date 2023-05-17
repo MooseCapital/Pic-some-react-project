@@ -9,7 +9,7 @@ function Cart(props) {
     const cartItemElements = app.cartItems.map(item => (
             <CartItem key={item.id} item={item} removeItem={ () => {
                 app.removeCartItems(item.id)
-                app.toggleCarted(item.id)
+                app.setCartFalse(item.id)
             }} />
         )
     )
