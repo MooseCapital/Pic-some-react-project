@@ -14,6 +14,9 @@ function Photos(props) {
     const photoElements = app.photos.map((item, index) => {
         return (
             <Image toggleFavorite={() => app.toggleFavorite(item.id)}  key={item.id} img={item}  class={getClass(index)}
+                isInCart={app.cartItems.some(cartImage => {
+                    return cartImage.id === item.id
+                })}
                 handleCart={() => {
                     if (item.carted) {
                         app.removeCartItems(item.id)

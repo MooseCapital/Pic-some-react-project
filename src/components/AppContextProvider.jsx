@@ -10,10 +10,6 @@ function AppContextProvider(props) {
 
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cartItems))
-
-        return () => {
-
-        }
     },[cartItems])
 
     useEffect(() => {
@@ -74,7 +70,6 @@ function AppContextProvider(props) {
     function toggleCarted(id) {
         setPhotos(prevPhotos => {
             return prevPhotos.map(img => {
-
                 return id === img.id ? {...img, carted: !img.carted} : {...img}
             })
         })
